@@ -9,6 +9,27 @@ function generatePassword() {
   if (numberOfCharacters < 8 || numberOfCharacters > 128 || isNaN(numberOfCharacters)) {
     return "Choose a valid number of characters.";
   }
+  //allows the user to choose if they want characters,numbers, or special characters
+  var hasLowercase = confirm("Do you want lowercase characters?");
+  if (hasLowercase) {
+    possibleCharacters += lowercaseCharacters;
+  }
+  
+  var hasUppercase = confirm("Do you want uppercase characters?");
+  if (hasUppercase) {
+    possibleCharacters += uppercaseCharacters;
+  }
+  
+  var hasNumbers = confirm("Do you want to use numbers?");
+  if (hasNumbers) {
+    possibleCharacters += numericCharacters;
+  }
+  
+  var hasSpecial = confirm("Do you want special characters?");
+  if (hasSpecial) {
+    possibleCharacters += specialCharacters;
+  }
+
 }
 
 // Get references to the #generate element

@@ -29,6 +29,10 @@ function generatePassword() {
   if (hasSpecial) {
     possibleCharacters += specialCharacters;
   }
+//if none of the characters are selected, and if so, it prompts the user to select at least one character type by returning a specific error message.
+  if (hasLowercase === false && hasUppercase === false && hasNumbers === false && hasSpecial === false) {
+    return "Please select at least one character type.";
+  }
 
 }
 

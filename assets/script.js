@@ -33,6 +33,14 @@ function generatePassword() {
   if (hasLowercase === false && hasUppercase === false && hasNumbers === false && hasSpecial === false) {
     return "Please select at least one character type.";
   }
+//added code to generate the password
+  var password = "";
+  for (var i = 0; i < numberOfCharacters; i++) {
+    var randomIndex = Math.floor(Math.random() * possibleCharacters.length);
+    password += possibleCharacters.charAt(randomIndex);
+  }
+  //code returns the value stored in the 'password' var
+  return password;
 
 }
 
